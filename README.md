@@ -1,24 +1,44 @@
-# README
+# ROR Blog App
+- This is a Blog App built with Ruby on Rails that will allow the user to add likes or comments.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Built With
+- Languages: Ruby on Rails
+- Models/Frameworks: OOP
 
-Things you may want to cover:
 
-* Ruby version
+# Getting started
 
-* System dependencies
+1. $ git clone https://github.com/sharon-odhiambo/Blog-App-Rails
+2. **cd folder-name**
+3. Open your terminal and run this command to start: **rails s**
 
-* Configuration
 
-* Database creation
+## Author
 
-* Database initialization
+👤 **Sharon Odhiambo**
 
-* How to run the test suite
+- GitHub: [@sharon-odhiambo](https://github.com/sharon-odhiambo)
+- Twitter: [@SharonVictor16](https://twitter.com/sharonvictor16)
+- LinkedIn: [Sharon Odhiambo](https://www.linkedin.com/in/sharonn-odhiambo/)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## 🤝 Contributing
 
-* ...
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
