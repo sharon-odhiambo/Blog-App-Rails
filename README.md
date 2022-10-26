@@ -1,24 +1,44 @@
-# README
+# OOP-School-Library
+- This is a school library that uses OOP to build record app for adding students, teachers, book rentals and list all the available rented books alongside either the teacher or student and indicates the date. The app organizes everything in a great way allowing easy maneuver.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Built With
+- Languages: Ruby on Rails
+- Models/Frameworks: OOP
 
-Things you may want to cover:
 
-* Ruby version
+# Getting started
 
-* System dependencies
+1. $ git clone https://github.com/sharon-odhiambo/Blog-App-Rails
+2. **cd folder-name**
+3. Open your terminal and run this command to start: **rails s**
 
-* Configuration
 
-* Database creation
+## Author
 
-* Database initialization
+👤 **Sharon Odhiambo**
 
-* How to run the test suite
+- GitHub: [@sharon-odhiambo](https://github.com/sharon-odhiambo)
+- Twitter: [@SharonVictor16](https://twitter.com/sharonvictor16)
+- LinkedIn: [Sharon Odhiambo](https://www.linkedin.com/in/sharonn-odhiambo/)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## 🤝 Contributing
 
-* ...
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
