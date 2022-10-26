@@ -1,5 +1,5 @@
-# OOP-School-Library
-- This is a school library that uses OOP to build record app for adding students, teachers, book rentals and list all the available rented books alongside either the teacher or student and indicates the date. The app organizes everything in a great way allowing easy maneuver.
+# ROR Blog App
+- This is a Blog App built with Ruby on Rails that will allow the user to add likes or comments.
 
 # Built With
 - Languages: Ruby on Rails
