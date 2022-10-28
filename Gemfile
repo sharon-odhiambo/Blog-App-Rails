@@ -62,6 +62,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'ffi'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
 
 group :test do
