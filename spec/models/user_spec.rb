@@ -25,7 +25,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context 'user posts counter test' do
+  context 'user custom methods tests' do
     it 'it should have a value' do
       the_user.posts_counter = nil
       expect(the_user).to_not be_valid
@@ -41,6 +41,9 @@ RSpec.describe User, type: :model do
         the_user.posts_counter = counter
         expect(the_user).to be_valid
       end
+    end
+    it 'most_recent_posts should return at most three items' do
+      expect(the_user.most_recent_posts.length).to be_between(0, 3)
     end
   end
 end

@@ -32,4 +32,7 @@ RSpec.describe Post, type: :model do
     @post.likes_counter = 'one'
     expect(@post).to_not be_valid
   end
+  it 'should return at most 5 items' do
+    expect(@post.most_recent_comments.length).to be_between(0, 5)
+  end
 end
