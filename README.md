@@ -10,7 +10,9 @@
 
 1. $ git clone https://github.com/sharon-odhiambo/Blog-App-Rails
 2. **cd folder-name**
-3. Open your terminal and run this command to start: **rails s**
+3. Open your terminal and run these commands to start: 
+**bundle install** 
+**rails s**
 
 
 ## Author
