@@ -1,0 +1,12 @@
+<p>Here is a list of all users</p>
+<% @users.each do |user| %>
+    <div>
+    <p><%= user.name %></p>
+    </div>
+    <div>
+    <p><%= user.bio %></p>
+    </div>
+    <div>
+    <p><%= user.photo %></p>
+    </div>
+<% end %>
