@@ -1,23 +1,25 @@
-<p>Here is a list of posts for a given user</p>
-<div>
-    <img src="<%= @user.photo %>" />
-</div>
-<div>
+<h1><%= @user.name %>'s Posts</h1>
+<div class="post">
+<img src= "<%= @user.photo %>" />
+<div class="name">
 <p><%= @user.name %></p>
-<p>Number of Posts: <%= @user.posts_counter %></p>
+<p class="count">Number of Posts: <%= @user.posts_counter %></p>
 </div>
-<div><p> Bio: 
-<%= @user.bio %>
 </div>
-</p><% @user.most_recent_posts.each do |post| %>
-    <div>Post  <p><%= post.id %></p>
+<div class="user-bio"><p> Bio: </p>
+<p> <%= @user.bio %> </p>
+</div>
+<ul><% @user.most_recent_posts.each do |post| %>
+    <li class="post-text">
+    <p>Post :<%= post.id %></p>
     <p><%= post.text %></p>
-    </div>
-    <div>
-    <p>Comments: <%= post.comments_counter %></p>
-    <p>Likes: <%= post.likes_counter %></p>
-    </div>
+    <p class="post-com">
+    <span>Comments: <%= post.comments_counter %></span>, 
+    <span>Likes: <%= post.likes_counter %></span>
+    </p>
+    </li>
 <% end %>
-<p><%= link_to user_posts_path(@user) do %></p>
-<p>See all Posts<% @user.posts %></p>
+</ul>
+<%= link_to user_posts_path(@user) do %>
+<button>See all Posts </button>
 <% end %>
