@@ -15,10 +15,11 @@
  <p>Comments <%= post.comments_counter  %></p>
  <p>Likes <%= post.likes_counter  %></p>
 </div>
-<div>
-  <p><%= @user.name  %></p>
-  <p>Comment <%= post.id  %></p>
+<% post.most_recent_comments.each do |com| %>
+  <div>
+  <p><%= @user.name  %> : <%= com.text  %></p>
 </div>
+  <% end %>
 <% end %>
 <div>
   <p>Pagination<% @user.posts %></p>
