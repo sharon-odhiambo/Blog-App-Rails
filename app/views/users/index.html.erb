@@ -1,12 +1,12 @@
 <p>Here is a list of all users</p>
 <% @users.each do |user| %>
     <div>
+    <img src= "<%= user.photo %>" />
+    </div>
+    <div>
+    <%= link_to user_path(user.id) do %>
     <p><%= user.name %></p>
-    </div>
-    <div>
-    <p><%= user.bio %></p>
-    </div>
-    <div>
-    <p><%= user.photo %></p>
+    <% end %>
+    <p>Number of Posts: <%= user.posts_counter %></p>
     </div>
 <% end %>

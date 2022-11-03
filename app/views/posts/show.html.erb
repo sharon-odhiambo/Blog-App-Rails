@@ -1,1 +1,18 @@
 <h2> Here is a name of a specic user who made a post </h2>
+<div>
+<p>Post <%= @post.id  %> by <%= @post.user.name %></p>
+<p><%= @post.text  %></p>
+<p>Comments <%= @post.comments_counter  %></p>
+<p>Likes <%= @post.likes_counter  %></p>
+</div>
+<% @post.comments.each do |comment| %>
+   <div>
+     <p><%= comment.user.name  %></p>
+     <p>Comment <%= comment.id  %></p>
+   </div>
+<% end %>
+<div>
+<%= link_to users_path do %>
+    <p>Back to Users</p>
+    <% end %>
+</div>
