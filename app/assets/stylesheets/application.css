@@ -1,15 +1,51 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 1% 5%;
+}
+
+.post,
+.user {
+  display: grid;
+  grid-template-columns: 0.2fr 1.4fr;
+  margin-bottom: 2%;
+  gap: 20px;
+}
+
+.post img,
+.user img {
+  width: 100px;
+  height: 100px;
+}
+
+.post-text,
+.newpost {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.user-post {
+  margin-bottom: 10px;
+}
+
+.name,
+.user-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-com,
+.count {
+  display: flex;
+  align-self: flex-end;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}

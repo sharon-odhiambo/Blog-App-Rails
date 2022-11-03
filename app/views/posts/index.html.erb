@@ -1,1 +1,29 @@
-<h2>Here is a list of posts for a given user</h2>
+<h1><%= @user.name %>'s Most Recent Posts </h1>
+<div class="post">
+<img src= "<%= @user.photo %>" />
+<div class="name">
+<p><%= @user.name %></p>
+<p class="count">Number of Posts: <%= @user.posts_counter %></p>
+</div>
+</div>
+<ul><% @user.posts.each do |post| %>
+  <li class="post-text">
+  <%= link_to user_post_path(@user, post.id) do %>
+  <p>Post :<%= post.id %></p>
+  <% end %>
+  <p><%= post.text %></p>
+  <p class="post-com">
+  <span>Comments: <%= post.comments_counter %></span>, 
+  <span>Likes: <%= post.likes_counter %></span>
+  </p>
+  </li>
+  <% post.most_recent_comments.each do |com| %>
+    <div>
+    <p><%= @user.name  %> : <%= com.text  %></p>
+  </div>
+    <% end %>
+<% end %>
+</ul>
+<%= link_to users_path do %>
+<button>Pagination</button>
+<% end %>

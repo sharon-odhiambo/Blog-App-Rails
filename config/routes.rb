@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root 'users#index' 
+  # get "/users/:id" => "users#show", as: 'user'
+  # get "/users/:id/posts" => "posts#index", as: 'posts'
+  # get "/users/:id/posts/:id" => "posts#show", as: 'post'
   resources :users, only: [:index, :show] do
   resources :posts, only: [:index, :show]
   end
