@@ -14,11 +14,11 @@ class PostsController < ApplicationController
 
   def create
     post = Post.new(title: post_params[:title], text: post_params[:text], user: current_user)
-    if post.save
-          notice = 'Post created successfully'
-      else
-          notice = 'Error'
-        end
+    notice = if post.save
+               'Post created successfully'
+             else
+               'Error'
+             end
     redirect_to user_posts_path
   end
 
