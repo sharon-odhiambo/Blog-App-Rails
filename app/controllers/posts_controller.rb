@@ -8,16 +8,16 @@ class PostsController < ApplicationController
   end
 
   def new
-    @id =  current_user.id
+    @id = current_user.id
     @post = Post.new
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      flash[:notice] = 'Post created successfully'
+    post = Post.new(post_params)
+    if post.save
+      notice = 'Post created successfully'
     else
-      flash[:error] = 'Error'
+      notice = 'Error'
     end
     redirect_to user_posts_path
   end
