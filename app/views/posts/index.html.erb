@@ -1,4 +1,4 @@
-<h1><%= @user.name %>'s Most Recent Posts </h1>
+<h1><%= @user.name %>'s Posts </h1>
 <div class="post">
 <img src= "<%= @user.photo %>" />
 <div class="name">
@@ -11,7 +11,10 @@
   <%= link_to user_post_path(@user, post.id) do %>
   <p>Post :<%= post.id %></p>
   <% end %>
-  <p><%= post.text %></p>
+  <p>
+  <span><%= post.text %></span>
+</span>
+</p>
   <p class="post-com">
   <span>Comments: <%= post.comments_counter %></span>, 
   <span>Likes: <%= post.likes_counter %></span>
@@ -26,4 +29,8 @@
 </ul>
 <%= link_to users_path do %>
 <button>Pagination</button>
+<% end %>
+
+<%= link_to new_user_post_path do %>
+  <button>Add Post</button>
 <% end %>
