@@ -13,18 +13,18 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(post_params)
-    if post.save
-      notice = 'Post created successfully'
-    else
-      notice = 'Error'
-    end
+    post = Post.new(title: post_params[:title], text: post_params[:text], user: current_user)
+    notice = if post.save
+               'Post created successfully'
+             else
+               'Error'
+             end
     redirect_to user_posts_path
   end
 
   private
+
   def post_params
     params.require(:post).permit(:title, :text)
   end
-
 end

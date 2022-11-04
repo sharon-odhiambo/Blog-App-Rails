@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get "/users/:id/posts/:id/new" => "comments#new", as: 'new_user_post_comment'
   post "/users/:id/posts/:id" => "comments#create", as: 'user_post_comments'
-  post "/users/:id/posts" => "likes#create", as: 'user_post_likes'
+  post "/users/:id/posts/:id/likes" => "likes#create", as: 'user_post_likes'
   # Defines the root path route ("/")
   # root "articles#index"
 end

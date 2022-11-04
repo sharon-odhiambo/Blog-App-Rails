@@ -5,9 +5,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    comment = Comment.new(post_params)
+    post = Post.find(params[:id])
+    comment = Comment.new(user: current_user, post:, text: post_params[:text])
     if comment.save
-      flash[:notice] = 'Post created successfully'
+      flash[:notice] = 'Comment created successfully'
     else
       flash[:error] = 'Error'
     end
@@ -15,7 +16,8 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def post_params
-    params.permit(:text)
+    params.require(:comment).permit(:text)
   end
 end

@@ -15,6 +15,9 @@
 <%= link_to new_user_post_comment_path do %>
     <button>Add Comment</button>
   <% end %>
+  <%= form_with url: "/users/#{@post.user_id}/posts/#{@post.id}/likes", scope: :like do |f| %>
+  <%= f.submit " Add Like" %>
+  <% end %>
 <%= link_to users_path do %>
     <button>Back to Users</button>
     <% end %>

@@ -13,9 +13,6 @@
   <% end %>
   <p>
   <span><%= post.text %></span>
-  <span><%= form_with url: user_post_likes_url(@user.id, post.id) do |form| %>
-  <%= form.submit("Add Like") %>
-<% end %>
 </span>
 </p>
   <p class="post-com">
