@@ -6,12 +6,13 @@
 <p class="count">Number of Posts: <%= @user.posts_counter %></p>
 </div>
 </div>
-<div class="user-bio"><p> Bio: </p>
-<p> <%= @user.bio %> </p>
-</div>
+<p class="user-bio"><span> Bio: </span> <span> <%= @user.bio %> </span>
+</p>
 <ul><% @user.most_recent_posts.each do |post| %>
     <li class="post-text">
-    <p>Post :<%= post.id %></p>
+    <%= link_to user_post_path(@user, post.id) do %>
+        <p>Post :<%= post.id %></p>
+    <% end %>
     <p><%= post.text %></p>
     <p class="post-com">
     <span>Comments: <%= post.comments_counter %></span>, 
