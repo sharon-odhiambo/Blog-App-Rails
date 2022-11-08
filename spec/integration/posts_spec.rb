@@ -8,7 +8,7 @@ RSpec.describe 'Posts Page', type: :view do
                            bio: 'oooooooo',
                            posts_counter: 0)
       @post1 = Post.create(
-        title: 'Hello',
+        title: 'Post 1',
         text: 'This is my first post',
         comments_counter: 14,
         likes_counter: 6,
@@ -26,7 +26,7 @@ RSpec.describe 'Posts Page', type: :view do
       expect(body).to have_content('Number of Posts: 1')
     end
     it 'shows the right user post title' do
-      expect(page).to have_content("Post :#{@post1.id}")
+      expect(page).to have_content(@post1.title)
     end
     it 'shows the right user post body' do
       expect(page).to have_content(@post1.text)
@@ -36,6 +36,12 @@ RSpec.describe 'Posts Page', type: :view do
     end
     it 'shows the user post 1 likes' do
       expect(page).to have_content(@post1.likes_counter)
+    end
+    it 'creates a pagination if the user posts exceed 5' do
+      6.times do |i|
+        Post.create(title: 'Post 1', text: 'This is my first post', user_id: @user1.id)
+      end
+      expect(page).to have_selector('div', class: 'pagination')
     end
     it 'redirects the user to the right post' do
       expect(page).to have_link(href: user_post_path(@user1, @post1))
@@ -48,7 +54,7 @@ RSpec.describe 'Posts Page', type: :view do
                            bio: 'oooooooo',
                            posts_counter: 10)
       @post1 = Post.create(
-        title: 'Hello',
+        title: 'Post 1',
         text: 'This is my first post',
         comments_counter: 14,
         likes_counter: 6,

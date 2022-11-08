@@ -6,14 +6,15 @@
 <p class="count">Number of Posts: <%= @user.posts_counter %></p>
 </div>
 </div>
-<ul><% @posts.each do |post| %>
+<ul><%= @posts.each do |post| %>
   <li class="post-text">
   <%= link_to user_post_path(@user, post.id) do %>
   <p>Post :<%= post.id %></p>
   <% end %>
   <p>
+  <span><%= post.title %></span>
+  <p>
   <span><%= post.text %></span>
-</span>
 </p>
   <p class="post-com">
   <span>Comments: <%= post.comments_counter %></span>, 
@@ -27,10 +28,9 @@
     <% end %>
 <% end %>
 </ul>
-<%= link_to users_path do %>
-<button>Pagination</button>
-<% end %>
-
+<div class="pagination">
+<%= will_paginate %>
+</div>
 <%= link_to new_user_post_path do %>
   <button>Add Post</button>
 <% end %>
