@@ -2,6 +2,7 @@
 <div class="user-post">
 <div class="newpost">
 <p>Post <%= @post.id  %> by <%= @post.user.name %></p>
+<p><%= @post.title  %></p>
 <p><%= @post.text  %></p>
 </div>
 <p><span>Comments <%= @post.comments_counter  %></span>, <span>Likes <%= @post.likes_counter  %></span></p>
