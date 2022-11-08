@@ -15,7 +15,13 @@ RSpec.describe 'Users', type: :request do
     end
   end
   describe 'GET #show' do
-    before(:example) { get '/users/:id' }
+    before(:all) do
+      @user1 = User.create(name: 'Sharon',
+                           photo: 'https://images.unsplash.com/photo-1667857481501-b447de8ed0c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700&q=60',
+                           bio: 'Teacher from Kenya',
+                           posts_counter: 4)
+    end
+    before(:example) { get '/users/1' }
     it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
@@ -23,8 +29,8 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('users/show')
     end
     it 'shows if the specific user template is rendered correctly' do
-      get '/users/:id'
-      expect(response.body).to include('<p>Here is a list of posts for a given user</p>')
+      get '/users/1'
+      expect(response.body).to include("<h1>Sharon's Most Recent Posts</h1>")
     end
   end
 end
