@@ -38,7 +38,7 @@ RSpec.describe 'Posts Page', type: :view do
       expect(page).to have_content(@post1.likes_counter)
     end
     it 'creates a pagination if the user posts exceed 5' do
-      6.times do |i|
+      6.times do |_i|
         Post.create(title: 'Post 1', text: 'This is my first post', user_id: @user1.id)
       end
       expect(page).to have_selector('div', class: 'pagination')
