@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 
   def create
     post = Post.find(params[:id])
-    comment = Comment.new(user: current_user, post: post, text: comments_params[:text])
+    comment = Comment.new(user: current_user, post:, text: comments_params[:text])
     if comment.save
       flash[:notice] = 'Comment created successfully'
     else
@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     end
     redirect_to user_post_comments_path
   end
-  
+
   def destroy
     comment = Comment.find(params[:id])
     comment.destroy
