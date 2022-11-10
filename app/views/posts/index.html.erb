@@ -6,7 +6,7 @@
 <p class="count">Number of Posts: <%= @user.posts_counter %></p>
 </div>
 </div>
-<ul><%= @posts.each do |post| %>
+<ul><% @posts.each do |post| %>
   <li class="post-text">
   <%= link_to user_post_path(@user, post.id) do %>
   <p>Post :<%= post.id %></p>
