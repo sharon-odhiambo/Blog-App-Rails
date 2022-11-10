@@ -9,11 +9,17 @@
 </div>
 <div>
 <% @post.comments.each do |comment| %>
-<p><%= comment.user.name  %> : <%= comment.text  %></p>
+<p><%= comment.user.name  %> : <%= comment.text  %>
+<% if can? :destroy, comment %>
+<%= form_with url: user_post_comment_destroy_path, method: :delete do |form| %>
+  <%= form.submit 'Delete comment' %>
 <% end %>
+<% end %>
+<% end %>
+</p>
 </div>
 <div>
-<%= link_to new_user_post_comment_path do %>
+<%= link_to new_user_post_comment_path(@post.user, @post) do %>
     <button>Add Comment</button>
   <% end %>
   <%= form_with url: "/users/#{@post.user_id}/posts/#{@post.id}/likes", scope: :like do |f| %>

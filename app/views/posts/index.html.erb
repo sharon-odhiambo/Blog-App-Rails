@@ -16,6 +16,11 @@
   <p>
   <span><%= post.text %></span>
 </p>
+<% if can? :destroy, Post %>
+  <%= form_with url: user_post_path(@user, post.id), method: :delete do |form| %>
+    <%= form.submit 'Delete post' %>
+  <% end %>
+<% end %>
   <p class="post-com">
   <span>Comments: <%= post.comments_counter %></span>, 
   <span>Likes: <%= post.likes_counter %></span>

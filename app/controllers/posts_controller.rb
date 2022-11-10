@@ -1,4 +1,11 @@
 class PostsController < ApplicationController
+  # before_action :set_user, only: %i[index show create destroy]
+  load_and_authorize_resource
+
+  # def set_user
+  #   @user = User.find(params[:user_id])
+  # end
+
   def index
     @user = User.includes(posts: [:comments]).find(params[:user_id])
     @posts = @user.posts.paginate(page: 1, per_page: 5)
@@ -20,6 +27,13 @@ class PostsController < ApplicationController
                      else
                        'Error'
                      end
+    redirect_to user_posts_path
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    @user.posts_counter -= 1
     redirect_to user_posts_path
   end
 
