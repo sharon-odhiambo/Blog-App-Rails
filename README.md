@@ -3,7 +3,7 @@
 
 # Built With
 - Languages: Ruby on Rails
-- Models/Frameworks: OOP
+- Models/Frameworks: OOP | RSpec with Capybara
 
 
 # Getting started

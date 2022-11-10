@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: "Hello"
-  text: "This is my first post"
-  comments_counter: 14
-  likes_counter: 6
-  user_id: 1
+  title: MyText
+  text: MyText
+  comments_counter: MyText
+  likes_counter: MyText
+  user_id: MyText
 
 two:
-  title: "Hello"
-  text: "This is my fifth post"
-  comments_counter: 0
-  likes_counter: 0
-  user_id: 1
+  title: MyText
+  text: MyText
+  comments_counter: MyText
+  likes_counter: MyText
+  user_id: MyText
