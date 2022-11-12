@@ -1,9 +1,7 @@
 require 'swagger_helper'
 
 describe 'Users API' do
-
   path '/api/users/:id/posts' do
-
     get 'Displays a user posts' do
       tags 'Posts'
       consumes 'application/json', 'application/xml'
@@ -12,7 +10,7 @@ describe 'Users API' do
         properties: {
           id: { type: :integer }
         },
-        required: [ 'id' ]
+        required: ['id']
       }
 
       response '201', 'post created' do
