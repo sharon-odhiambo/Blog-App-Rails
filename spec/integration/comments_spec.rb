@@ -15,7 +15,7 @@ describe 'Comments API' do
         required: %w[user_id post_id text]
       }
 
-      response '201', 'pet created' do
+      response '201', 'comment created' do
         let(:comment) { { user_id: 1, post_id: 1, text: 'Awesome stuff' } }
         run_test!
       end
@@ -33,7 +33,7 @@ describe 'Comments API' do
       produces 'application/json', 'application/xml'
       parameter user: :post, in: :path, type: :integer
 
-      response '200', 'name found' do
+      response '200', 'comment found' do
         schema type: :object,
                properties: {
                  user_id: { type: :integer },
@@ -45,7 +45,7 @@ describe 'Comments API' do
         run_test!
       end
 
-      response '404', 'pet not found' do
+      response '404', 'comment not found' do
         let(:id) { 'invalid' }
         run_test!
       end
