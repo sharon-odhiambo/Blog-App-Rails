@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
+  namespace :api do
+      resources :users, only: [:show] do
+        resources :posts, only: [:index, :show] do
+        resources :comments, only: [:index, :new, :create, :show]
+      end
+    end
+  end
   root 'users#index' 
   # get "/users/:id" => "users#show", as: 'user'
   # get "/users/:id/posts" => "posts#index", as: 'posts'
